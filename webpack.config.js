@@ -1,32 +1,34 @@
-
 module.exports = {
     context: __dirname,
     entry: {
-        'main': './index.js',
+        main: './index.js',
     },
     output: {
         path: __dirname + 'dist/assets',
         filename: '[name].bundle.js',
-        publicPath: '/assets'
+        publicPath: '/assets',
     },
     devServer: {
         contentBase: __dirname,
     },
     module: {
         rules: [
-            {  
+            {
                 test: /\.jsx|\.js$/,
                 exclude: /node_modules/,
-                use: [{
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['es2015', 'react']
-                    }
-                }]
-            }
-        ]
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['es2015', 'react'],
+                            plugins: ['babel-plugin-styled-components'],
+                        },
+                    },
+                ],
+            },
+        ],
     },
     resolve: {
-        extensions: ['*', '.js', '.jsx']
-    }
+        extensions: ['*', '.js', '.jsx'],
+    },
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import Radium from 'radium';
+// import Radium from 'radium';
 
 class Root extends React.Component {
     constructor(props) {
@@ -9,16 +9,16 @@ class Root extends React.Component {
         const styles = {
             color: '#000',
             ':hover': {
-                backgroundColor: '#0074d9'
-            }
+                backgroundColor: '#0074d9',
+            },
         };
-        return(
+        return (
             <div>
-                <p style={{color: 'blue'}} >Hello World!</p>
+                <p style={{ color: 'blue' }}>Hello World!</p>
                 <button style={styles}>Button</button>
             </div>
         );
     }
 }
 
-module.exports = Radium(Root);
+module.exports = Root;
